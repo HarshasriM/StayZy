@@ -1,1 +1,41 @@
+
+# Ignore virtual environment
 venv/
+
+# Bytecode files
+__pycache__/
+stayzy/__pycache__/
+accounts/__pycache__/
+home/__pycache__/
+*.py[cod]
+
+# SQLite database
+*.sqlite3
+
+# Django migrations
+*/migrations/*.pyc
+*/migrations/__pycache__/
+
+# Local settings, secrets
+*.env
+.env
+secrets.json
+local_settings.py
+
+# VS Code settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Django static and media (optional)
+staticfiles/
+media/
+
+# Test, coverage, cache
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.cache/
