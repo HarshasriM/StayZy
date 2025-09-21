@@ -272,11 +272,6 @@ def edit_hotel(request, slug):
      
     ameneties = Ameneties.objects.all()
     return render(request, 'vendor/edit_hotel.html', context = {'hotel' : hotel_obj, 'ameneties' : ameneties})
-
-@login_required(login_url='login_vendor')
-def bookings(request,id):
-    hotel = Hotel.objects.get(id=id)
-    return render(request,"vendor/bookings.html",context={"hotel":hotel})
 def logout_user(request):
     logout(request)
     return redirect('/accounts/login/')

@@ -7,37 +7,34 @@
         <a href="{% url 'add_hotel'%}" class="btn btn-success"> Add Hotels</a>
     </div>
     <div class="row">
-    <h2>My Hotels</h2>
     {% for hotel in hotels%}
   
         <div class="col-md-3">
             <div class="card shadow" style="width: 18rem;">
                 <img src="/media/{{hotel.hotel_images.first.image}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <h5 class="card-title">{{hotel.hotel_name}}</h5>
-                    <a href="{% url 'hotel_bookings' hotel.id %}" class="text-decoration-none text-secondary px-2" style="border:1px solid gray;border-radius: 5px;">Bookings</a>
-                  </div>
+                  <h5 class="card-title">{{hotel.hotel_name}}</h5>
                   <p>{{hotel.hotel_description}}</p>
                   {% for amenetie in hotel.ameneties.all %}
             
-                    <span class="badge text-bg-primary">{{amenetie.name}}</span>
+                  <span class="badge text-bg-primary">{{amenetie.name}}</span>
                
                   {% endfor%}
-                  
 
                 </div>
                 <div class="d-flex gap-20 mx-3 mb-2" style="justify-content:flex-end;gap:20px" >
                     <a href="{% url 'upload_images' hotel.hotel_slug %}" class="btn btn-success px-4">Image</a>
                     <a href="{% url 'edit_hotel' hotel.hotel_slug %}" class="btn btn-secondary px-4">Edit</a>
                 </div>
-            </div>
+              </div>
         </div>
-        
 
     {% endfor %}
+
+
+    
     </div>
-   
+
 </div>
 
 
