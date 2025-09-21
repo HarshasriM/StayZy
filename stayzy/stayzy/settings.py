@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-epj*^u4s1w98+2e!w96@wiz2sw#7***qm@5ey$*kn&(j@@qs-7"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -82,29 +82,29 @@ WSGI_APPLICATION = "stayzy.wsgi.application"
 # }
 
 
-import dj_database_url
+# import dj_database_url
 
-DEBUG = False
+# DEBUG = False
 
-ALLOWED_HOSTS = ["*"]  # Later you can restrict to your Railway domain
+# ALLOWED_HOSTS = ["*"]  # Later you can restrict to your Railway domain
 
-# Database config
-DATABASES = {
-    "default": dj_database_url.config(
-        default="postgresql://postgres:fcUpsTRrQJIvSkqgbgkPZNyKamFgEWBV@mainline.proxy.rlwy.net:58378/railway"
-    )
-}
-
+# # Database config
 # DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "stayzy_db",
-#         "USER": "postgres",
-#         "PASSWORD": "Harsha@123",
-#         "HOST": "localhost",
-#         "PORT": "5432",
-#     }   
+#     "default": dj_database_url.config(
+#         default="postgresql://postgres:fcUpsTRrQJIvSkqgbgkPZNyKamFgEWBV@mainline.proxy.rlwy.net:58378/railway"
+#     )
 # }
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "stayzy_db",
+        "USER": "postgres",
+        "PASSWORD": "Harsha@123",
+        "HOST": "localhost",
+        "PORT": "5432",
+    }   
+}
 
 
 
@@ -164,4 +164,3 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = "harshameda17@gmail.com"
 EMAIL_HOST_PASSWORD ="crfzxdxrdszglbji"
 
-MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
