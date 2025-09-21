@@ -82,16 +82,29 @@ WSGI_APPLICATION = "stayzy.wsgi.application"
 # }
 
 
+import dj_database_url
+
+DEBUG = False
+
+ALLOWED_HOSTS = ["*"]  # Later you can restrict to your Railway domain
+
+# Database config
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "stayzy_db",
-        "USER": "postgres",
-        "PASSWORD": "Harsha@123",
-        "HOST": "localhost",
-        "PORT": "5432",
-    }   
+    "default": dj_database_url.config(
+        default="postgresql://postgres:fcUpsTRrQJIvSkqgbgkPZNyKamFgEWBV@mainline.proxy.rlwy.net:58378/railway"
+    )
 }
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "stayzy_db",
+#         "USER": "postgres",
+#         "PASSWORD": "Harsha@123",
+#         "HOST": "localhost",
+#         "PORT": "5432",
+#     }   
+# }
 
 
 
@@ -150,3 +163,5 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "harshameda17@gmail.com"
 EMAIL_HOST_PASSWORD ="crfzxdxrdszglbji"
+
+MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
