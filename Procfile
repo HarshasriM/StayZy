@@ -1,2 +1,2 @@
-web: gunicorn stayzy.stayzy.wsgi
+web: gunicorn stayzy.wsgi
 
