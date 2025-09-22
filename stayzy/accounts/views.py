@@ -81,8 +81,8 @@ def verify_email_token(request, token):
             hotel_vendor.is_verified = True
             hotel_vendor.save()
             return redirect('/accounts/login-vendor/')
-        hotel_user.is_verified = True
-        hotel_user.save()
+        hotel_user[0].is_verified = True
+        hotel_user[0].save()
         messages.success(request, "Email verified")
         return redirect('/accounts/login/')
     except Exception as e:
