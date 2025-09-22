@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: stayzy
+    runtime: python
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    startCommand: "gunicorn stayzy.wsgi"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: stayzy.settings
+      - key: PYTHON_VERSION
+        value: 3.11

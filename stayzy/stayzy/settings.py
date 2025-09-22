@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -133,6 +134,7 @@ USE_TZ = True
 
 # STATIC_URL = "static/"
 import os
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATICFILES_DIR = {
@@ -153,3 +155,4 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = "harshameda17@gmail.com"
 EMAIL_HOST_PASSWORD ="crfzxdxrdszglbji"
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
