@@ -90,7 +90,7 @@ DATABASES = {
 #         "ENGINE": "django.db.backends.postgresql",
 #         "NAME": "stayzy_db",
 #         "USER": "postgres",
-#         "PASSWORD": "Harsha@123",
+#         "PASSWORD": "",
 #         "HOST": "localhost",
 #         "PORT": "5432",
 #     }   
